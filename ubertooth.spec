@@ -7,7 +7,7 @@ Summary(pl.UTF-8):	Ubertooth - otwarta platformwa do tworzenia urządzeń bezprz
 Name:		ubertooth
 %define	tag_ver	2020-12-R1
 Version:	%(echo %{tag_ver} | tr - _)
-Release:	
+Release:	2
 License:	GPL v2+
 Group:		Libraries
 #Source0Download: https://github.com/greatscottgadgets/ubertooth/releases
@@ -81,7 +81,7 @@ Narzędzia pythonowe z projektu Ubertooth:
 
 %prep
 %setup -q -n %{name}-%{tag_ver}
-%patch0 -p1
+%patch -P 0 -p1
 
 %{__sed} -i -e '1s,/usr/bin/env python3,%{__python3},' \
 	host/python/{specan_ui/ubertooth-specan-ui,ubtbr/ubertooth-btbr}
